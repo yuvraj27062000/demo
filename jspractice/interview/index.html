@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <style>
+        input {
+            width: 30%;
+            padding: 20px 50px;
+
+        }
+
+        div {
+            margin: 20px;
+        }
+
+        #male,
+        #female {
+            width: 10%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Signup Form</h1><br><br>
+    <div class="container">
+        <form name="myForm" id="myForm" action="/morgen.html" method="post" onsubmit="return validateForm()">
+
+            <div>
+                Name : " <input type="text" placeholder="name" id="name" name="fname" required> <span
+                    class="nameerror"></span>
+            </div>
+
+            <div>
+                Phone : <input type="number" placeholder="..Mobile No." id="number" name="fnumber" required><span
+                    class="numbererror"></span>
+
+            </div>
+
+            <div>
+                Email : <input type="email" placeholder="email" id="email" name="femail" required><span
+                    class="emailerror"></span>
+            </div>
+
+
+            <div>
+                Password : <input type="password" placeholder="password" value="" id="password" name="fpswd"
+                    required><span class="passworderror"></span>
+            </div>
+
+
+            <div>
+                conform Password : <input type="password" placeholder="re-password" id="repassword" name="frepswd"
+                    required><span class="repassworderror"></span>
+            </div>
+
+            <div>
+                <p>Gender</p>
+                <label for="gender">Male</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="gender">Female</label>
+                <input type="radio" id="female" name="gender" value="female">
+            </div>
+
+
+            <div>
+                <p>Nationality</p>
+                <select name="nationality" id="nationality"><br><br>
+                    <option value="">India</option>
+                    <option value="">America</option>
+                    <option value="">UAE</option>
+                    <option value="">Shreelanka</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit" value="submit">Submit</button>
+            </div>
+
+            <div>
+                <input type="button" onclick="myFunction()" value="Reset form">
+            </div>
+
+        </form>
+    </div>
+    <script>
+        function myFunction() {
+            document.getElementById("myForm").reset();
+        }
+
+
+        function seterror(cls, msg) {
+            let element = document.getElementsByClassName(cls)[0].innerHTML = msg;
+
+        }
+        function clearErrors() {
+
+            errors = document.getElementsByTagName("span");
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+
+
+        }
+
+        function validateForm() {
+            // clearerror();
+            var submit = true
+            clearErrors()
+            
+            let email = document.forms["myForm"]["email"].value;
+            let pswd = document.forms["myForm"]["pswd"].value;
+            let repswd = document.forms["myForm"]["repswd"].value;
+
+            let name = document.forms["myForm"]["fname"].value;
+            if (name.length < 3 || name.length > 10) {
+                seterror("nameerror", "name should have 3 character and less then 10");
+                submit = false;
+            }
+         
+            let number = document.forms["myForm"]["fnumber"].value;
+            if (number.length != 10) {
+                seterror("numbererror", "number should have 10 digit");
+                data = false
+            }
+            if (email.length <= 15) {
+                seterror("emailerror", "Email is too long");
+                data = false
+            }
+            if (pswd.length >= 8) {
+                seterror("passworderror", "password length should 8 or more");
+                data = false
+            }
+            if (pswd !== repswd) {
+                seterror("passworderror", "password length should 8 or more");
+                data = false
+            }
+            // [pswd]
+            // console.log(pswd);
+
+            return submit
+
+        }
+    </script>
+</body>
+
+</html>

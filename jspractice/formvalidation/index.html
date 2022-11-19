@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <style >
+       input {
+            width: 30%;
+            padding: 20px 50px;
+
+        }
+
+        div {
+            margin: 20px;
+        }
+
+        #male,
+        #female {
+            width: 10%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1> SignUp Form </h1>
+
+    <div class="container">
+
+        <form action="#" onsubmit="return validate()" method="post" id="form" name="myform">
+
+            <div id="name">
+                Name : <input type="text" name="fname"><span class="showerror"></span>
+            </div>
+            <div id="email">
+                Email : <input type="text" name="fmail"><span class="showerror"></span>
+            </div>
+            <div id="password">
+                password : <input type="password" name="fpassword"><span class="showerror"></span>
+            </div>
+            <div id="repassword">
+                conform password : <input type="password" name="frepassword"><span class="showerror"></span>
+            </div>
+            <div id="gender">
+                <p>Gender :</p>
+                Male :  <input type="radio" name="fmale" value="male"> Female : <input type="radio" name="fmale"
+                    value="Female">
+            </div>
+            <div id="nationality">
+                <select name="fnationality" >
+                    <option value="">India</option>
+                    <option value="">Shreelanka</option>
+                    <option value="">Bhutan</option>
+                    <option value="">Bangladesh</option>
+                </select>
+            </div>
+            <div id="submit">
+                <button type="submit"> Submit</button>
+                
+            </div>
+            <div id="reset">    
+                <input type="button" onclick="myFunction()" value="Reset form">
+            </div>
+        </form>
+
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title>"StopWatch"</title>
+    <style>
+
+        .constainer{
+                height: 100px;
+                width: 300px;
+                background-color: blanchedalmond;
+                margin-bottom: 20px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+        }
+        #timeId{
+
+            background-color: azure;
+            height: 50px;
+            width: 200px;
+            justify-content: center;
+                align-items: center;
+                display: flex;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div  class="constainer">
+        <div id="timeId">
+
+        </div >        
+    </div>
+    <button id="startBtnId">Start</button  >
+    <button disabled true id="stopBtnId">pause</button >
+    <button disabled true id="resetBtnId">Stop</button >
+    <script src="./StopWatch.js"></script>
+
+</body>
+</html>
